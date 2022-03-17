@@ -5,9 +5,17 @@ using projectwebdev.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// Load the database connection from appsettings in a var
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// declare serverversion
+// todo load from appsettings
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 28));
+
+// Connect with MySQL Database
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseMySql(connectionString, serverVersion));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
