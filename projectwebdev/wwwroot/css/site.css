@@ -15,4 +15,10 @@ html {
 
 body {
   margin-bottom: 60px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+  border-radius: 50px;
+  padding: 1rem 0;
 }
