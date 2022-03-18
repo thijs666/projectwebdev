@@ -11,7 +11,7 @@ using projectwebdev.Data;
 namespace projectwebdev.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220317145939_Initial")]
+    [Migration("20220318125542_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

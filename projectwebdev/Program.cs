@@ -8,8 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Load the database connection from appsettings in a var
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+
 // declare serverversion
 // todo load from appsettings
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 28));
