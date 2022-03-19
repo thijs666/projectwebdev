@@ -48,6 +48,6 @@ footer {
     padding: 0;
 }
 
-.new-account {
+.new-account, .return {
     padding-top: 1rem;
 }
