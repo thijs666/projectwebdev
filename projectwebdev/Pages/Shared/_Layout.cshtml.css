@@ -1,6 +1,105 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+body {
+  background: #d1d5db
+}
+
+#layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#sidenav {
+  width: 20%;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+#achtergrond_navbar {
+  border-radius: 20px;
+}
+.row1 {
+  border-radius: 20px;
+  background: #f7f7f7;
+  height: 80px;
+}
+
+#zoek {
+  padding-top: 15px;
+  width: 60%;
+}
+
+.gebruiker {
+  padding-top: 37px;
+  padding-right: 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 20%;
+}
+
+.row2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#naam {
+  margin-top: 8px;
+}
+
+.image {
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+.streepje {
+  height: 35px;
+  width: 1px;
+  background-color: lightgrey;
+  border: 1px solid lightgrey;
+}
+
+
+.form {
+  position: relative;
+}
+
+.form .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #9ca3af
+}
+
+.form span {
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db
+}
+
+.left-pan {
+  padding-left: 7px
+}
+
+.left-pan i {
+  padding-left: 10px
+}
+
+.form-input {
+  height: 55px;
+  text-indent: 33px;
+  border-radius: 10px
+}
+
+.form-input:focus {
+  box-shadow: none;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
