@@ -1,0 +1,36 @@
+@page
+@model MijnCollectiesModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .grid-container {
+        display: grid;
+        column-gap: 50px;
+        row-gap: 50px;
+    }
+</style>
+<body>
+<p>Mijn Colllecties</p>
+<h1>Overzicht</h1>
+<!--<button type="button" class="btn btn-primary"></button>-->
+<form>
+    <label for="cname">Collection name:</label><br/>
+    <input type="text" id="cname" name="cname"/><br/>
+    <input type="submit" value="Submit"/>
+</form>
+@foreach (var name in Model.Collections)
+{
+    <div class="grid-item">
+        <img/> <!--TODO add images to the grid-->
+        <p class="collection-name">name</p>
+    </div>
+}
+</body>
+</html>
