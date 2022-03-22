@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> signInManager
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor Accessor
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,34 +47,34 @@
          
             <ul class="nav_list">
                 <li class="nav_item">
-                    <a asp-page="./Index" class="nav-link align-middle px-0">
+                    <a @(Accessor.HttpContext.Request.Path.Value == "/" ? "nav-item-selected" : "" ) href="./" class="nav-link align-middle px-0">
                          <i class="bi bi-house"></i> <span class="nav_name">Home</span>
                     </a>
                 </li>
                 <li class="nav_item">
-                    <a asp-page="./Collecties" class="nav-link px-0 align-middle">
+                    <a @(Accessor.HttpContext.Request.Path.Value == "/Collecties" ? "nav-item-selected" : "" ) href="./Collecties" class="nav-link px-0 align-middle">
                          <i class="bi bi-archive"></i> <span class="nav_name">Mijn Collecties</span>
                     </a>
                 </li>
                 <li class="nav_item">
-                    <a asp-page="./Reeksen" class="nav-link px-0 align-middle">
+                    <a @(Accessor.HttpContext.Request.Path.Value == "/Reeksen" ? "nav-item-selected" : "" ) href="./Reeksen" class="nav-link px-0 align-middle">
                         <i class="bi bi-folder2-open"></i> <span class="nav_name">Reeksen</span>
                     </a>
                 </li>
                 <li class="nav_item">
-                    <a asp-page="./Titels" class="nav-link px-0 align-middle">
+                    <a @(Accessor.HttpContext.Request.Path.Value == "/Titels" ? "nav-item-selected" : "" ) href="./Titels" class="nav-link px-0 align-middle">
                         <i class="bi bi-newspaper"></i> <span class="nav_name">Titels</span>
                     </a>
                 </li>
                 <li class="nav_item">
-                    <a asp-page="./Uitgevers" class="nav-link px-0 align-middle">
+                    <a @(Accessor.HttpContext.Request.Path.Value == "/Uitgevers" ? "nav-item-selected" : "" ) href="./Uitgevers" class="nav-link px-0 align-middle">
                        <i class="bi bi-person-lines-fill"></i> <span class="nav_name">Uitgevers</span>
                     </a>
                 </li>
                 @if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
                  {
                     <li class="nav_item">
-                        <a asp-page="./Manage" class="nav-link px-0 align-middle">
+                        <a @(Accessor.HttpContext.Request.Path.Value == "/Manage" ? "nav-item-selected" : "" ) href="./Manage" class="nav-link px-0 align-middle">
                             <i class="bi bi-gear"></i> <span class="nav_name">Beheer</span>
                         </a>
                     </li>

@@ -129,12 +129,17 @@ ul.nav_list {
     transition: .3s;
 }
 
-    .sidebar-footer > div, .reorder {
-        display: grid;
-        grid-template-columns: max-content max-content;
-        align-items: center;
-        column-gap: 1rem;
-    }
+.nav_item a[nav-item-selected] {
+    color: #fff !important;
+    font-weight: 700;
+}
+
+.sidebar-footer > div, .reorder {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+}
 
     .nav_item a, .sidebar-footer {
         color: #AFA5D9 !important;

@@ -29,6 +29,10 @@ builder.Services.ConfigureApplicationCookie(config =>
     config.AccessDeniedPath = "/AccessDenied";
 });
 
+// Register IHttpContextAccessor
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddRazorPages();
 
 var app = builder.Build();

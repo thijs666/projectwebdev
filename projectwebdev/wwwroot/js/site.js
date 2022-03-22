@@ -4,7 +4,8 @@
 // Write your JavaScript code.
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    
+
+    // todo stay open when switching to new page
     const showNavbar = (toggleId, navId, bodyId, headerId) => {
         const toggle = document.getElementById(toggleId),
             nav = document.getElementById(navId),
