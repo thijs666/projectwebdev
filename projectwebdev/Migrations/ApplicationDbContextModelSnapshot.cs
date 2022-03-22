@@ -43,6 +43,15 @@ namespace projectwebdev.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "2137a002-2dea-444a-be32-fb9d90276900",
+                            ConcurrencyStamp = "8940da22-bf00-4f3c-b5bc-185a0e51effb",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -130,6 +139,22 @@ namespace projectwebdev.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "a4ede709-eb7c-47e7-a1bc-f34427485c72",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "b14c71cb-4c4e-4940-87a3-0b7d293161ac",
+                            Email = "admin@localhost",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAEAACcQAAAAEKdg6aWLv4H52qHPnBXaJ/taA+X7qHWEYAFO40770QrWiuTgnTwf4EXr5ceNekErxw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "53c67ae7-c2cf-43d3-893a-5307f2525cb6",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
