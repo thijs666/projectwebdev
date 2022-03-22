@@ -22,10 +22,11 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-// Adjust the Login Path to the right URL
+// Adjust the paths to the right URL
 builder.Services.ConfigureApplicationCookie(config =>
 {
     config.LoginPath = "/Login";
+    config.AccessDeniedPath = "/AccessDenied";
 });
 
 builder.Services.AddRazorPages();

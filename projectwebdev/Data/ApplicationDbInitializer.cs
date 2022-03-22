@@ -29,6 +29,12 @@ namespace projectwebdev.Data
                 // registered user
                 new IdentityUser() { UserName = "user@localhost", NormalizedUserName = "USER@LOCALHOST", Email = "user@localhost", NormalizedEmail = "USER@LOCALHOST", PasswordHash = hasher.HashPassword(null, "root"), EmailConfirmed = true }
             );
+
+            builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            {
+                RoleId = adminRoleId,
+                UserId = adminUserId
+            });
         }
     }
 }

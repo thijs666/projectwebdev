@@ -48,7 +48,7 @@ namespace projectwebdev.Migrations
                         new
                         {
                             Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
-                            ConcurrencyStamp = "663ad972-3710-487d-9463-3f530b1c7da5",
+                            ConcurrencyStamp = "f4c8c7a6-63a7-4a60-aab8-645fc9c25804",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -145,31 +145,31 @@ namespace projectwebdev.Migrations
                         {
                             Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b3d1be8f-b202-4ccb-9f0b-b078c95c0700",
+                            ConcurrencyStamp = "0e771739-088b-4fab-a6d2-213dd81ab753",
                             Email = "admin@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST",
                             NormalizedUserName = "ADMIN@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFvs2Smm+PRJwGY+ZCLfFdy9Hp4KcuTepTgOVx+ZdAg+UxwA6C/K55Hqv8LYS6rjyg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJWQJZr9brAqPuQTdlr6Z2yMSnqj3vnqk/FbML3MBhY/7qYh4Dv0tFD5npo+hFsZbw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "23302ec0-1f7b-4c4a-93ec-214f9d6958ff",
+                            SecurityStamp = "f36d8789-c47a-468f-a35d-fe8ddc191199",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost"
                         },
                         new
                         {
-                            Id = "91957d77-98d2-4b56-b39f-2c38d783a314",
+                            Id = "70412b2e-9628-4acd-b37f-07d176542798",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0d18d96a-48e1-4903-b6ac-ebf2994f6d1f",
+                            ConcurrencyStamp = "2e230fd9-c7e5-4384-8a5b-468294debe07",
                             Email = "user@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST",
                             NormalizedUserName = "USER@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPtXuNg0aqp7W92cBastYmU0OE0ZWNP+B4tCtcORxd2nfabHGDau8H8BfTlD2cdA4w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFWNATGw1SYH+v9INLGoG9XlR7SONj/ctSnUqh8jPho/Tl8dlKS5rWrvo9IVDVo1qw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "db9fad56-a52d-4ed0-a248-fc2535cb838b",
+                            SecurityStamp = "bdbc3401-dde9-4bc8-819d-61c1c7ffefc8",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost"
                         });
@@ -235,6 +235,13 @@ namespace projectwebdev.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
+                            RoleId = "2301D884-221A-4E7D-B509-0113DCC043E1"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
