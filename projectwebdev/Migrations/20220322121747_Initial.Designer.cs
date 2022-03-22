@@ -11,7 +11,7 @@ using projectwebdev.Data;
 namespace projectwebdev.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220318125542_Initial")]
+    [Migration("20220322121747_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,6 +45,15 @@ namespace projectwebdev.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
+                            ConcurrencyStamp = "663ad972-3710-487d-9463-3f530b1c7da5",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -132,6 +141,40 @@ namespace projectwebdev.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "b3d1be8f-b202-4ccb-9f0b-b078c95c0700",
+                            Email = "admin@localhost",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@LOCALHOST",
+                            NormalizedUserName = "ADMIN@LOCALHOST",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFvs2Smm+PRJwGY+ZCLfFdy9Hp4KcuTepTgOVx+ZdAg+UxwA6C/K55Hqv8LYS6rjyg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "23302ec0-1f7b-4c4a-93ec-214f9d6958ff",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@localhost"
+                        },
+                        new
+                        {
+                            Id = "91957d77-98d2-4b56-b39f-2c38d783a314",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0d18d96a-48e1-4903-b6ac-ebf2994f6d1f",
+                            Email = "user@localhost",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "USER@LOCALHOST",
+                            NormalizedUserName = "USER@LOCALHOST",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPtXuNg0aqp7W92cBastYmU0OE0ZWNP+B4tCtcORxd2nfabHGDau8H8BfTlD2cdA4w==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "db9fad56-a52d-4ed0-a248-fc2535cb838b",
+                            TwoFactorEnabled = false,
+                            UserName = "user@localhost"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>

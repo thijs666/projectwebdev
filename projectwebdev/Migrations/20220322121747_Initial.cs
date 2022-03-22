@@ -194,6 +194,21 @@ namespace projectwebdev.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "663ad972-3710-487d-9463-3f530b1c7da5", "Administrator", "ADMINISTRATOR" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "91957d77-98d2-4b56-b39f-2c38d783a314", 0, "0d18d96a-48e1-4903-b6ac-ebf2994f6d1f", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAEPtXuNg0aqp7W92cBastYmU0OE0ZWNP+B4tCtcORxd2nfabHGDau8H8BfTlD2cdA4w==", null, false, "db9fad56-a52d-4ed0-a248-fc2535cb838b", false, "user@localhost" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "b3d1be8f-b202-4ccb-9f0b-b078c95c0700", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEFvs2Smm+PRJwGY+ZCLfFdy9Hp4KcuTepTgOVx+ZdAg+UxwA6C/K55Hqv8LYS6rjyg==", null, false, "23302ec0-1f7b-4c4a-93ec-214f9d6958ff", false, "admin@localhost" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
