@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> signInManager
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,6 +70,14 @@
                        <i class="bi bi-person-lines-fill"></i> <span class="nav_name">Uitgevers</span>
                     </a>
                 </li>
+                @if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+                 {
+                    <li class="nav_item">
+                        <a asp-page="./Manage" class="nav-link px-0 align-middle">
+                            <i class="bi bi-gear"></i> <span class="nav_name">Beheer</span>
+                        </a>
+                    </li>
+                }
             </ul>
 
             <div class="seperator-title">
@@ -78,7 +87,7 @@
             <ul class="nav_list">
                 <li class="nav_item">
                     <a href="#" class="nav-link px-0 align-middle">
-                        <i class="bi bi-gear"></i> <span class="nav_name">Instellingen</span>
+                        <i class="bi bi-sliders"></i> <span class="nav_name">Instellingen</span>
                     </a>
                 </li>
                 <li class="nav_item">
