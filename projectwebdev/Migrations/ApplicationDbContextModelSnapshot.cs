@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using projectwebdev.Data;
 
@@ -48,7 +49,7 @@ namespace projectwebdev.Migrations
                         new
                         {
                             Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
-                            ConcurrencyStamp = "f4c8c7a6-63a7-4a60-aab8-645fc9c25804",
+                            ConcurrencyStamp = "83d9ef18-91c4-4534-b0ff-379fe36f3709",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -145,31 +146,31 @@ namespace projectwebdev.Migrations
                         {
                             Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e771739-088b-4fab-a6d2-213dd81ab753",
+                            ConcurrencyStamp = "37dc0946-3a24-423c-94a5-d38f1c50917b",
                             Email = "admin@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST",
                             NormalizedUserName = "ADMIN@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJWQJZr9brAqPuQTdlr6Z2yMSnqj3vnqk/FbML3MBhY/7qYh4Dv0tFD5npo+hFsZbw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEF6OqtoUErUHI0V21ZB1QE4ywL+tHzVeE0MHW5inZsKJgfHXAAt5ybxzQz1wZnDuGw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f36d8789-c47a-468f-a35d-fe8ddc191199",
+                            SecurityStamp = "1653e56a-32b1-4a27-9431-28f3ba7f382c",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost"
                         },
                         new
                         {
-                            Id = "70412b2e-9628-4acd-b37f-07d176542798",
+                            Id = "e89b130c-6a88-454c-8442-7197a996d46c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2e230fd9-c7e5-4384-8a5b-468294debe07",
+                            ConcurrencyStamp = "581a4ba6-0618-41f3-a80c-c3f6e599d5fd",
                             Email = "user@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST",
                             NormalizedUserName = "USER@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFWNATGw1SYH+v9INLGoG9XlR7SONj/ctSnUqh8jPho/Tl8dlKS5rWrvo9IVDVo1qw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGl+o38J/VNnmo28fuDQ0EO0eTiqPY+PLBkEVAOUyz0ZF1la+pA5c1RJVmgj1yRDaw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bdbc3401-dde9-4bc8-819d-61c1c7ffefc8",
+                            SecurityStamp = "3cd1c653-3657-41dc-81b0-6fbe6911c02b",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost"
                         });
@@ -263,6 +264,28 @@ namespace projectwebdev.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("projectwebdev.Models.Stripboek", b =>
+                {
+                    b.Property<int>("Isbn")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Aantal_Blz")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Jaar_Van_Uitgave")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Titel")
+                        .HasColumnType("int");
+
+                    b.HasKey("Isbn")
+                        .HasName("PK_Stripboeken");
+
+                    b.ToTable("Stripboeken", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
