@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using projectwebdev;
 using projectwebdev.Data;
+using projectwebdev.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +36,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IStripboekRepository, MySQLStripboekRepository>();
 
 var app = builder.Build();
 

@@ -1,0 +1,17 @@
+﻿@page
+@model projectwebdev.Pages.Titels.DetailModel
+@{
+	ViewData["Title"] = "Titels";
+	var coverPath = "~/images/" + (Model.Stripboek.CoverImageUrl ?? "placeholder.png");
+}
+
+<h1>Detail pagina</h1>
+
+<img src="@coverPath" asp-append-version="true" />
+
+<span>@Model.Stripboek.Titel</span>
+<span>@Model.Stripboek.Aantal_Blz</span>
+<span>@Model.Stripboek.Isbn</span>
+<span>@Model.Stripboek.Jaar_Van_Uitgave</span>
+
+<a asp-page="/Titels/Edit" asp-route-Isbn="@Model.Stripboek.Isbn" class="btn">Edit</a>

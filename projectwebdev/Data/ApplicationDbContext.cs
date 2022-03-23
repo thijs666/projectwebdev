@@ -31,10 +31,11 @@ public class ApplicationDbContext : IdentityDbContext
         // todo
 
         // Configure columns
-        builder.Entity<Stripboek>().Property(s => s.Titel).HasColumnType("int").IsRequired();
+        builder.Entity<Stripboek>().Property(s => s.Titel).HasColumnType("char").IsRequired();
         builder.Entity<Stripboek>().Property(s => s.Aantal_Blz).HasColumnType("int").IsRequired();
         builder.Entity<Stripboek>().Property(s => s.Isbn).HasColumnType("int").UseMySqlIdentityColumn().IsRequired();
         builder.Entity<Stripboek>().Property(s => s.Jaar_Van_Uitgave).HasColumnType("int").IsRequired();
+        builder.Entity<Stripboek>().Property(s => s.CoverImageUrl).HasColumnType("char");
 
         // Configure relationships
         //todo zodra er meer tabellen zijn

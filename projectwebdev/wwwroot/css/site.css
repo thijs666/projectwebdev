@@ -210,3 +210,7 @@ ul.nav_list {
     padding-right: 1rem;
     font-size: 1.25rem;
 }
+
+span {
+    display: block;
+}
