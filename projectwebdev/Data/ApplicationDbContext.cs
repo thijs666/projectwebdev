@@ -8,6 +8,9 @@ namespace projectwebdev.Data;
 public class ApplicationDbContext : IdentityDbContext
 {
     public DbSet<Stripboek> Stripboeken { get; set; }
+    public DbSet<Collectie> Collecties { get; set; }
+    public DbSet<Conditie> Condities { get; set; }
+    public DbSet<Producent> Producenten { get; set; }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
@@ -23,9 +26,15 @@ public class ApplicationDbContext : IdentityDbContext
 
         // Map entities to tables
         builder.Entity<Stripboek>().ToTable("Stripboeken");
-
+        builder.Entity<Collectie>().ToTable("Collecties");
+        builder.Entity<Conditie>().ToTable("Condities");
+        builder.Entity<Producent>().ToTable("Producenten");
+        
         // Configure primary keys
         builder.Entity<Stripboek>().HasKey(s => s.Isbn).HasName("PK_Stripboeken");
+        builder.Entity<Collectie>().HasKey(c => c.CollectieID).HasName("PK_Collecties");
+        builder.Entity<Conditie>().HasKey(con => con.ISBN).HasName("PK_Condities");
+        builder.Entity<Producent>().HasKey(p => p.ProducentID).HasName("PK_Producenten");
 
         // Configure indexes
         // todo
@@ -35,6 +44,20 @@ public class ApplicationDbContext : IdentityDbContext
         builder.Entity<Stripboek>().Property(s => s.Aantal_Blz).HasColumnType("int").IsRequired();
         builder.Entity<Stripboek>().Property(s => s.Isbn).HasColumnType("int").UseMySqlIdentityColumn().IsRequired();
         builder.Entity<Stripboek>().Property(s => s.Jaar_Van_Uitgave).HasColumnType("int").IsRequired();
+
+        builder.Entity<Collectie>().Property(c => c.CollectieNaam).HasColumnType("string").IsRequired();
+        builder.Entity<Collectie>().Property(c => c.CollectieID).HasColumnType("int").IsRequired();
+
+        builder.Entity<Conditie>().Property(con => con.Gesealed).HasColumnType("bool").IsRequired();
+        builder.Entity<Conditie>().Property(con => con.Gesigneerd).HasColumnType("bool").IsRequired();
+        builder.Entity<Conditie>().Property(con => con.Kaft).HasColumnType("bool").IsRequired();
+        builder.Entity<Conditie>().Property(con => con.ConditieStripboek).HasColumnType("string").IsRequired();
+        builder.Entity<Conditie>().Property(con => con.ISBN).HasColumnType("int").IsRequired();
+
+        builder.Entity<Producent>().Property(p => p.Geboortedatum).HasColumnType("int").IsRequired();
+        builder.Entity<Producent>().Property(p => p.Naam).HasColumnType("string").IsRequired();
+        builder.Entity<Producent>().Property(p => p.Rol).HasColumnType("string").IsRequired();
+        builder.Entity<Producent>().Property(p => p.ProducentID).HasColumnType("int").IsRequired();
 
         // Configure relationships
         //todo zodra er meer tabellen zijn
