@@ -1,4 +1,4 @@
-﻿@page "/Titels"
+﻿@page "/titels"
 @model projectwebdev.Pages.TitelsModel
 @{
 	ViewData["Title"] = "Titels";
@@ -10,7 +10,7 @@
 		var coverPath = "~/images/" + (stripboek.CoverImageUrl ?? "placeholder.png");
 
 		<div class="col-md-2">
-			<a asp-page="/Titels/Detail" asp-route-Isbn="@stripboek.Isbn">
+			<a asp-page="/titels/detail" asp-route-ID="@stripboek.Id">
 				<img src="@coverPath" asp-append-version="true" />
 				<span>Uitgevernaam</span>
 				<h3>@stripboek.Titel</h3>

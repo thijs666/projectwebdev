@@ -71,18 +71,19 @@ namespace projectwebdev.Migrations
                 name: "Stripboeken",
                 columns: table => new
                 {
-                    Isbn = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Titel = table.Column<string>(type: "char", nullable: false)
+                    Titel = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Aantal_Blz = table.Column<int>(type: "int", nullable: false),
+                    Isbn = table.Column<int>(type: "int", nullable: false),
                     Jaar_Van_Uitgave = table.Column<int>(type: "int", nullable: false),
-                    CoverImageUrl = table.Column<string>(type: "char", nullable: false)
+                    CoverImageUrl = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Stripboeken", x => x.Isbn);
+                    table.PrimaryKey("PK_Stripboeken", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -216,17 +217,17 @@ namespace projectwebdev.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "b03bd4a2-c636-4ed4-b31e-96e7de9aa15a", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "44a34335-12aa-463f-8687-48843403137c", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "328ae809-7b4e-4b1c-be7c-7e8c47902e13", 0, "5ce3c4d6-c51e-4ac4-9c77-daac59064ffc", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAEN66YWh71tONOpOBfJKbWMnFkgwviVqPaj8oD3Q7K2T8nPSv80t9qBQA5wIGcLdQrw==", null, false, "715061d0-b8b1-46d7-9741-a3b9a2e5854b", false, "user@localhost" });
+                values: new object[] { "ad790533-3fbb-454d-98ea-bfe9f436aac2", 0, "c4c54dc6-cd39-4106-9c5b-b6a365e5ffc5", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAEHCiQEOHDkyt7LIDWWrcCTJDwbzf/nz3BarKWWMyGKoMf61l8cHlg+RIOYuhSE71rA==", null, false, "a139cdc2-0184-4eca-919e-37769366efe4", false, "user@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "9b4c8596-c96e-4b42-9564-4fd1d021161e", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEHHG4P4LXwmSiuoERjK/fnEsFx2rcyzehkFTuDtdHD6hQUI1Mzu8ZcnQRCFlW/yqkg==", null, false, "f0fdd345-0d1d-4a01-abf6-e0590de52d0c", false, "admin@localhost" });
+                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "756adfdd-8543-4513-82cb-751ce63e046b", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEH5Mke7gOmaGYsgwIN9Y0xHNPQmIW5GC5TtvmWxTajkZ8Ix2jkz8Xu5QWVqIESY8Rw==", null, false, "95628d53-18f6-43c4-9f9c-3eb1cbc666f9", false, "admin@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

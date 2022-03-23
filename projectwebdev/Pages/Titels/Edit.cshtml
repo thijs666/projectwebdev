@@ -1,10 +1,40 @@
-﻿@page
+﻿@page "{id:min(1)?}"
 @model projectwebdev.Pages.Titels.EditModel
 @{
+	ViewData["Title"] = "Titels";
+	var coverPath = "~/images/" + (Model.Stripboek.CoverImageUrl ?? "placeholder.png");
+	var pageHeader = Model.Stripboek.Id > 0 ? "Bewerken" : "Toevoegen";
 }
 
-<h1>Edit</h1>
+<h1>@pageHeader</h1>
 
-<form method="post">
-	<input hidden asp-for="Stripboek.Isbn" />
+<form method="post" enctype="multipart/form-data">
+	<input hidden asp-for="Stripboek.Id" />
+	<input hidden asp-for="Stripboek.CoverImageUrl" />
+
+	<div asp-validation-summary="All" class="text-danger"></div>
+
+	<label asp-for="Stripboek.Titel"></label>
+	<input asp-for="Stripboek.Titel" placeholder="Titel" />
+	<span asp-validation-for="Stripboek.Titel" class="text-danger"></span>
+
+	<label asp-for="Stripboek.Aantal_Blz"></label>
+	<input asp-for="Stripboek.Aantal_Blz" placeholder="Aantal Blz" />
+
+	<label asp-for="Stripboek.Isbn"></label>
+	<input asp-for="Stripboek.Isbn" placeholder="ISBN" />
+	<span asp-validation-for="Stripboek.Isbn" class="text-danger"></span>
+
+	<label asp-for="Stripboek.Jaar_Van_Uitgave"></label>
+	<input asp-for="Stripboek.Jaar_Van_Uitgave" placeholder="Jaar van Uitgave" />
+
+	<label>Verander Cover</label>
+	<input asp-for="Cover" />
+
+	<img src="@coverPath" asp-append-version="true" />
+
+	<button type="submit" class="btn">Opslaan</button>
+	<a asp-page="/titels/index" class="btn">Annuleren</a>
+
+	
 </form>

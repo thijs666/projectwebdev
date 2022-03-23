@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "/titels/view/{id:min(1)}"
 @model projectwebdev.Pages.Titels.DetailModel
 @{
 	ViewData["Title"] = "Titels";
@@ -14,4 +14,4 @@
 <span>@Model.Stripboek.Isbn</span>
 <span>@Model.Stripboek.Jaar_Van_Uitgave</span>
 
-<a asp-page="/Titels/Edit" asp-route-Isbn="@Model.Stripboek.Isbn" class="btn">Edit</a>
+<a asp-page="/Titels/Edit" asp-route-ID="@Model.Stripboek.Id" class="btn">Edit</a>

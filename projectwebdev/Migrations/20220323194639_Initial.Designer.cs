@@ -12,7 +12,7 @@ using projectwebdev.Data;
 namespace projectwebdev.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220323131249_Initial")]
+    [Migration("20220323194639_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,7 +51,7 @@ namespace projectwebdev.Migrations
                         new
                         {
                             Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
-                            ConcurrencyStamp = "b03bd4a2-c636-4ed4-b31e-96e7de9aa15a",
+                            ConcurrencyStamp = "44a34335-12aa-463f-8687-48843403137c",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -148,31 +148,31 @@ namespace projectwebdev.Migrations
                         {
                             Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9b4c8596-c96e-4b42-9564-4fd1d021161e",
+                            ConcurrencyStamp = "756adfdd-8543-4513-82cb-751ce63e046b",
                             Email = "admin@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST",
                             NormalizedUserName = "ADMIN@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHHG4P4LXwmSiuoERjK/fnEsFx2rcyzehkFTuDtdHD6hQUI1Mzu8ZcnQRCFlW/yqkg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH5Mke7gOmaGYsgwIN9Y0xHNPQmIW5GC5TtvmWxTajkZ8Ix2jkz8Xu5QWVqIESY8Rw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f0fdd345-0d1d-4a01-abf6-e0590de52d0c",
+                            SecurityStamp = "95628d53-18f6-43c4-9f9c-3eb1cbc666f9",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost"
                         },
                         new
                         {
-                            Id = "328ae809-7b4e-4b1c-be7c-7e8c47902e13",
+                            Id = "ad790533-3fbb-454d-98ea-bfe9f436aac2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5ce3c4d6-c51e-4ac4-9c77-daac59064ffc",
+                            ConcurrencyStamp = "c4c54dc6-cd39-4106-9c5b-b6a365e5ffc5",
                             Email = "user@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST",
                             NormalizedUserName = "USER@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN66YWh71tONOpOBfJKbWMnFkgwviVqPaj8oD3Q7K2T8nPSv80t9qBQA5wIGcLdQrw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHCiQEOHDkyt7LIDWWrcCTJDwbzf/nz3BarKWWMyGKoMf61l8cHlg+RIOYuhSE71rA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "715061d0-b8b1-46d7-9741-a3b9a2e5854b",
+                            SecurityStamp = "a139cdc2-0184-4eca-919e-37769366efe4",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost"
                         });
@@ -270,7 +270,7 @@ namespace projectwebdev.Migrations
 
             modelBuilder.Entity("projectwebdev.Models.Stripboek", b =>
                 {
-                    b.Property<int>("Isbn")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
@@ -280,16 +280,19 @@ namespace projectwebdev.Migrations
 
                     b.Property<string>("CoverImageUrl")
                         .IsRequired()
-                        .HasColumnType("char");
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("Isbn")
+                        .HasColumnType("int");
 
                     b.Property<int>("Jaar_Van_Uitgave")
                         .HasColumnType("int");
 
                     b.Property<string>("Titel")
                         .IsRequired()
-                        .HasColumnType("char");
+                        .HasColumnType("varchar(255)");
 
-                    b.HasKey("Isbn")
+                    b.HasKey("Id")
                         .HasName("PK_Stripboeken");
 
                     b.ToTable("Stripboeken", (string)null);

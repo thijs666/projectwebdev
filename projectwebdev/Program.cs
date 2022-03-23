@@ -31,6 +31,16 @@ builder.Services.ConfigureApplicationCookie(config =>
     config.AccessDeniedPath = "/AccessDenied";
 });
 
+builder.Services.Configure<RouteOptions>(options =>
+{
+    // Generate lowercase URLs
+    options.LowercaseUrls = true;
+    //Generate lowercase query strings
+    options.LowercaseQueryStrings = true;
+    // Add slash to generated URLs
+    options.AppendTrailingSlash = true;
+});
+
 // Register IHttpContextAccessor
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddHttpContextAccessor();
