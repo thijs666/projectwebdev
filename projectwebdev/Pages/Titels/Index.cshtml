@@ -10,12 +10,14 @@
 		var coverPath = "~/images/" + (stripboek.CoverImageUrl ?? "placeholder.png");
 
 		<div class="col-md-2">
-			<a asp-page="/titels/detail" asp-route-ID="@stripboek.Id">
-				<img src="@coverPath" asp-append-version="true" />
-				<span>Uitgevernaam</span>
-				<h3>@stripboek.Titel</h3>
-				<span>Datum</span>
-			</a>
+			<div class="stripboek-wrapper">
+				<a asp-page="/titels/detail" asp-route-ID="@stripboek.Id">
+					<img src="@coverPath" asp-append-version="true" />
+					<span class="uitgever">Uitgevernaam</span>
+					<h3>@stripboek.Titel</h3>
+					<span class="datum">Datum</span>
+				</a>
+			</div>
 		</div>
 	}
 </div>
