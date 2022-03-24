@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace projectwebdev.Pages
 {
     [Authorize(Roles = "Administrator")]
@@ -9,6 +8,8 @@ namespace projectwebdev.Pages
     {
         public void OnGet()
         {
+
         }
+
     }
 }

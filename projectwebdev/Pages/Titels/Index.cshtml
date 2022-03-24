@@ -1,0 +1,24 @@
+﻿@page "/titels"
+@model projectwebdev.Pages.TitelsModel
+@{
+	ViewData["Title"] = "Titels";
+}
+
+<div class="row">
+	@foreach (var stripboek in Model.Stripboeken)
+	{
+		var coverPath = "~/images/" + (stripboek.CoverImageUrl ?? "placeholder.png");
+
+		<div class="col-md-2">
+			<div class="stripboek-wrapper">
+				<a asp-page="/titels/detail" asp-route-ID="@stripboek.Id">
+					<img src="@coverPath" asp-append-version="true" />
+					<span class="uitgever">Uitgevernaam</span>
+					<h3>@stripboek.Titel</h3>
+					<span class="datum">Datum</span>
+				</a>
+			</div>
+		</div>
+	}
+</div>
+

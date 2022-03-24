@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using projectwebdev;
 using projectwebdev.Data;
+using projectwebdev.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,11 +31,18 @@ builder.Services.ConfigureApplicationCookie(config =>
     config.AccessDeniedPath = "/AccessDenied";
 });
 
-// Register IHttpContextAccessor
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddHttpContextAccessor();
+builder.Services.Configure<RouteOptions>(options =>
+{
+    // Generate lowercase URLs
+    options.LowercaseUrls = true;
+    //Generate lowercase query strings
+    options.LowercaseQueryStrings = true;
+    // Add slash to generated URLs
+    options.AppendTrailingSlash = true;
+});
 
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IStripboekRepository, MySQLStripboekRepository>();
 
 var app = builder.Build();
 

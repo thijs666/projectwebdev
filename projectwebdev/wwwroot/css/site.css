@@ -129,7 +129,7 @@ ul.nav_list {
     transition: .3s;
 }
 
-.nav_item a[nav-item-selected] {
+.nav_item a.active {
     color: #fff !important;
     font-weight: 700;
 }
@@ -209,4 +209,22 @@ ul.nav_list {
 .user-block i {
     padding-right: 1rem;
     font-size: 1.25rem;
+}
+
+.stripboek-wrapper a {
+    color: #12132A!important;
+    text-decoration: none;
+}
+
+.stripboek-wrapper img {
+    width: 100%;
+}
+
+.stripboek-wrapper .uitgever {
+    font-size: 1rem;
+}
+
+.stripboek-wrapper h3 {
+    margin-bottom: 0;
+    font-weight: 600;
 }

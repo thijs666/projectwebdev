@@ -49,7 +49,7 @@ namespace projectwebdev.Migrations
                         new
                         {
                             Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
-                            ConcurrencyStamp = "83d9ef18-91c4-4534-b0ff-379fe36f3709",
+                            ConcurrencyStamp = "fa7b4287-62cf-499a-840e-a45383363c21",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -146,31 +146,31 @@ namespace projectwebdev.Migrations
                         {
                             Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "37dc0946-3a24-423c-94a5-d38f1c50917b",
+                            ConcurrencyStamp = "97ea9538-8b80-48e9-a231-43729e304bfd",
                             Email = "admin@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST",
                             NormalizedUserName = "ADMIN@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEF6OqtoUErUHI0V21ZB1QE4ywL+tHzVeE0MHW5inZsKJgfHXAAt5ybxzQz1wZnDuGw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHTRIx3Ul2EcqgVPjzTzEQNTBGXVOVwkaOexBXTvT4IrEF5rrAB7GZJrYS8H7J11OA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1653e56a-32b1-4a27-9431-28f3ba7f382c",
+                            SecurityStamp = "ce61ccb6-a2c7-40d9-abd3-f3e1e7a90221",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost"
                         },
                         new
                         {
-                            Id = "e89b130c-6a88-454c-8442-7197a996d46c",
+                            Id = "f75be1ea-77e7-42bf-8b8e-4958cdf6d6e0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "581a4ba6-0618-41f3-a80c-c3f6e599d5fd",
+                            ConcurrencyStamp = "02ec9692-6401-4013-8cab-f6a6311e01b4",
                             Email = "user@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST",
                             NormalizedUserName = "USER@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGl+o38J/VNnmo28fuDQ0EO0eTiqPY+PLBkEVAOUyz0ZF1la+pA5c1RJVmgj1yRDaw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIJXHHCzTurDeeIAmY4RnggWnwPShw4/TzB7ji2OZ14xFoyRPlJlA0TKsDP1/oZ8lg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3cd1c653-3657-41dc-81b0-6fbe6911c02b",
+                            SecurityStamp = "408ba312-3fb6-4bf2-b927-12bfb6246de9",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost"
                         });
@@ -268,21 +268,29 @@ namespace projectwebdev.Migrations
 
             modelBuilder.Entity("projectwebdev.Models.Stripboek", b =>
                 {
-                    b.Property<int>("Isbn")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Aantal_Blz")
+                    b.Property<int?>("Aantal_Blz")
                         .HasColumnType("int");
 
-                    b.Property<int>("Jaar_Van_Uitgave")
+                    b.Property<string>("CoverImageUrl")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Isbn")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int?>("Jaar_Van_Uitgave")
                         .HasColumnType("int");
 
-                    b.Property<int>("Titel")
-                        .HasColumnType("int");
+                    b.Property<string>("Titel")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
 
-                    b.HasKey("Isbn")
+                    b.HasKey("Id")
                         .HasName("PK_Stripboeken");
 
                     b.ToTable("Stripboeken", (string)null);
