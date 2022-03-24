@@ -41,10 +41,6 @@ builder.Services.Configure<RouteOptions>(options =>
     options.AppendTrailingSlash = true;
 });
 
-// Register IHttpContextAccessor
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddHttpContextAccessor();
-
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IStripboekRepository, MySQLStripboekRepository>();
 

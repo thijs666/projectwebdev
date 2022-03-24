@@ -129,7 +129,7 @@ ul.nav_list {
     transition: .3s;
 }
 
-.nav_item a[nav-item-selected] {
+.nav_item a.active {
     color: #fff !important;
     font-weight: 700;
 }
