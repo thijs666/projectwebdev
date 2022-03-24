@@ -25,15 +25,12 @@ public class ApplicationDbContext : IdentityDbContext
 
         //// Map entities to tables
         builder.Entity<Stripboek>().ToTable("Stripboeken");
-
-        //// Configure primary keys
-        builder.Entity<Stripboek>().HasKey(s => s.Id).HasName("PK_Stripboeken");
         // builder.Entity<Collectie>().ToTable("Collecties");
         // builder.Entity<Conditie>().ToTable("Condities");
         // builder.Entity<Producent>().ToTable("Producenten");
         
         // Configure primary keys
-        builder.Entity<Stripboek>().HasKey(s => s.Isbn).HasName("PK_Stripboeken");
+        builder.Entity<Stripboek>().HasKey(s => s.Id).HasName("PK_Stripboeken");
         // builder.Entity<Collectie>().HasKey(c => c.CollectieID).HasName("PK_Collecties");
         // builder.Entity<Conditie>().HasKey(con => con.ISBN).HasName("PK_Condities");
         // builder.Entity<Producent>().HasKey(p => p.ProducentID).HasName("PK_Producenten");

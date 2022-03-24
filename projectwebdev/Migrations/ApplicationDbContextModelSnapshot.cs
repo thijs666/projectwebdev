@@ -49,7 +49,7 @@ namespace projectwebdev.Migrations
                         new
                         {
                             Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
-                            ConcurrencyStamp = "fa7b4287-62cf-499a-840e-a45383363c21",
+                            ConcurrencyStamp = "ecf2399e-ccc6-471e-8148-06cdc6874ddd",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -146,31 +146,31 @@ namespace projectwebdev.Migrations
                         {
                             Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "97ea9538-8b80-48e9-a231-43729e304bfd",
+                            ConcurrencyStamp = "1e39ad6b-a5e5-4dd9-9428-124d42cd63cf",
                             Email = "admin@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST",
                             NormalizedUserName = "ADMIN@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHTRIx3Ul2EcqgVPjzTzEQNTBGXVOVwkaOexBXTvT4IrEF5rrAB7GZJrYS8H7J11OA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDPUUrZKIVDcmp73nfknIv2c2TnpE7NjXRju1GxnwBmuG8gnxLZkkXvW9ZEX9iRj3g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ce61ccb6-a2c7-40d9-abd3-f3e1e7a90221",
+                            SecurityStamp = "18e986fa-1dba-4fca-9861-ae4e82c59697",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost"
                         },
                         new
                         {
-                            Id = "f75be1ea-77e7-42bf-8b8e-4958cdf6d6e0",
+                            Id = "7cd21901-33f9-4308-94a7-fc5e6f1ea7ca",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "02ec9692-6401-4013-8cab-f6a6311e01b4",
+                            ConcurrencyStamp = "12024a9e-164d-4411-952a-6cb0e30082a7",
                             Email = "user@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST",
                             NormalizedUserName = "USER@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIJXHHCzTurDeeIAmY4RnggWnwPShw4/TzB7ji2OZ14xFoyRPlJlA0TKsDP1/oZ8lg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOGqZCH4QbjEj+7mILg6iAmFqdSYdafJ8hjlSQ7hHXrzYwsAHAQhxxg2Ll5Qc33l4w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "408ba312-3fb6-4bf2-b927-12bfb6246de9",
+                            SecurityStamp = "7d6c83ed-0c94-485e-aafb-e1a18dc31b78",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost"
                         });
@@ -268,7 +268,7 @@ namespace projectwebdev.Migrations
 
             modelBuilder.Entity("projectwebdev.Models.Stripboek", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);

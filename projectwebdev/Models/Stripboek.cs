@@ -4,7 +4,7 @@ namespace projectwebdev.Models
 {
     public class Stripboek
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         [Required]
         public string Titel { get; set; }
         public int? Aantal_Blz { get; set; }

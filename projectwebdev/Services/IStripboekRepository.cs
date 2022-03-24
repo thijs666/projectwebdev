@@ -9,6 +9,6 @@ namespace projectwebdev.Services
         Stripboek GetStripboek(int id);
         Stripboek Update(Stripboek updatedStripboek);
         Stripboek Add(Stripboek newStripboek);
-        Stripboek Delete(int? id);
+        Stripboek Delete(int id);
     }
 }
