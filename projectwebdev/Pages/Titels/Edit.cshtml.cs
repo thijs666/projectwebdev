@@ -27,7 +27,7 @@ namespace projectwebdev.Pages.Titels
         public Stripboek Stripboek { get; set; }
 
         [BindProperty]
-        public IFormFile Cover { get; set; }
+        public IFormFile? Cover { get; set; }
         
         public IActionResult OnGet(int? id)
         {

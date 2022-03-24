@@ -78,7 +78,7 @@ namespace projectwebdev.Migrations
                     Aantal_Blz = table.Column<int>(type: "int", nullable: false),
                     Isbn = table.Column<int>(type: "int", nullable: false),
                     Jaar_Van_Uitgave = table.Column<int>(type: "int", nullable: false),
-                    CoverImageUrl = table.Column<string>(type: "varchar(255)", nullable: false)
+                    CoverImageUrl = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>

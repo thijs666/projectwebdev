@@ -19,6 +19,17 @@ namespace projectwebdev.Services
             return newStripboek;
         }
 
+        public Stripboek Delete(int? id)
+        {
+            Stripboek stripboek = context.Stripboeken.Find(id);
+            if(stripboek != null)
+            {
+                context.Stripboeken.Remove(stripboek);
+                context.SaveChanges();
+            }
+            return stripboek;
+        }
+
         public IEnumerable<Stripboek> GetAllStripboeken()
         {
             return context.Stripboeken;
