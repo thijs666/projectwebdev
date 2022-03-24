@@ -5,17 +5,26 @@
 	var coverPath = "~/images/" + (Model.Stripboek.CoverImageUrl ?? "placeholder.png");
 }
 
-<h1>Detail pagina</h1>
+<div>
+	<h5>@Model.Stripboek.Uitgever - @Model.Stripboek.Verschijningsdatum</h5>
+	<h1 style="font-weight: bold">@Model.Stripboek.Titel</h1>
+	<br/>
+</div>
 
-<img src="@coverPath" asp-append-version="true" />
-
-<span>@Model.Stripboek.Titel</span>
-<span>@Model.Stripboek.Aantal_Blz</span>
-<span>@Model.Stripboek.Schrijver</span>
-<span>@Model.Stripboek.Tekenaar</span>
-<span>@Model.Stripboek.Isbn</span>
-<span>@Model.Stripboek.Verschijningsdatum</span>
-<span>@Model.Stripboek.Uitgever</span>
+<div class="container">
+	<h5 style="font-weight: bold">Overzicht</h5>
+	<hr/>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra vulputate placerat. Pellentesque at tincidunt leo. Sed volutpat odio nec pharetra tempor. Integer a tincidunt turpis. Etiam a leo tortor. Morbi feugiat tempus metus eget varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam imperdiet pharetra justo sit amet facilisis. In hac habitasse platea dictumst. Ut quis dapibus tortor.</p>
+	<h6 style="font-weight: bold">Auteur</h6>
+	<p>@Model.Stripboek.Schrijver</p>
+	<h6 style="font-weight: bold">Tekenaar</h6>
+	<p>@Model.Stripboek.Tekenaar</p>
+	<h6 style="font-weight: bold">Aantal bladzijden</h6>
+	<p>@Model.Stripboek.Aantal_Blz</p>
+	<h6 style="font-weight: bold">ISBN</h6>
+	<p>@Model.Stripboek.Isbn</p>
+	<img src="@coverPath" asp-append-version="true" />
+</div>
 
 <a asp-page="/Titels/Edit" asp-route-ID="@Model.Stripboek.Id" class="btn">Bewerken</a>
-<a asp-page="/Titels/Delete" asp-route-ID="@Model.Stripboek.Id" class="btn">Verwijderen</a>
+<a asp-page="/Titels/Delete" asp-route-ID="@Model.Stripboek.Id" class="btn btn-danger">Verwijderen</a>
