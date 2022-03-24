@@ -69,7 +69,7 @@ namespace projectwebdev.Areas.Identity.Pages.Account.Manage
             /// </summary>
             [Required]
             [EmailAddress]
-            [Display(Name = "New email")]
+            [Display(Name = "Nieuwe email")]
             public string NewEmail { get; set; }
         }
 
@@ -125,14 +125,14 @@ namespace projectwebdev.Areas.Identity.Pages.Account.Manage
                     protocol: Request.Scheme);
                 await _emailSender.SendEmailAsync(
                     Input.NewEmail,
-                    "Confirm your email",
+                    "Bevestig uw email",
                     $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-                StatusMessage = "Confirmation link to change email sent. Please check your email.";
+                StatusMessage = "Bevestigingslink om e-mail te wijzigen verzonden. Controleer uw e-mail.";
                 return RedirectToPage();
             }
 
-            StatusMessage = "Your email is unchanged.";
+            StatusMessage = "Uw e-mail is ongewijzigd.";
             return RedirectToPage();
         }
 
@@ -161,10 +161,10 @@ namespace projectwebdev.Areas.Identity.Pages.Account.Manage
                 protocol: Request.Scheme);
             await _emailSender.SendEmailAsync(
                 email,
-                "Confirm your email",
+                "Bevestig uw email",
                 $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-            StatusMessage = "Verification email sent. Please check your email.";
+            StatusMessage = "Verificatie email verzonden. Controleer uw e-mail.";
             return RedirectToPage();
         }
     }
