@@ -228,3 +228,45 @@ ul.nav_list {
     margin-bottom: 0;
     font-weight: 600;
 }
+
+.edit-image {
+    display: flex;
+    justify-content: center;
+}
+
+.edit-image img {
+    width: 100%;
+    max-width: 500px;
+}
+
+.edit-form input, .edit-form label, .edit-form span {
+    display: block;
+}
+
+.edit-form input {
+    border-radius: 50px;
+    padding: 0 0 0 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+
+.edit-form .form-floating > label {
+    position: relative;
+    padding: 1rem 0 .25rem 0;
+}
+
+.edit-form button {
+    padding: 1rem;
+}
+
+.edit-form .buttons {
+    padding: 1rem 0;
+}
+
+/* Temp container fix */
+.container {
+    max-width: 100%!important;
+}

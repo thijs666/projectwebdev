@@ -7,34 +7,50 @@
 }
 
 <h1>@pageHeader</h1>
+<div class="row">
+	<div class="col-lg-6">
+		<div class="edit-form">
+			<form method="post" enctype="multipart/form-data">
+				<input hidden asp-for="Stripboek.Id" />
+				<input hidden asp-for="Stripboek.CoverImageUrl" />
 
-<form method="post" enctype="multipart/form-data">
-	<input hidden asp-for="Stripboek.Id" />
-	<input hidden asp-for="Stripboek.CoverImageUrl" />
+				<div class="form-floating">
+					<label asp-for="Stripboek.Titel"></label>
+					<input asp-for="Stripboek.Titel" placeholder="Titel" />
+					<span asp-validation-for="Stripboek.Titel" class="text-danger"></span>
+				</div>
 
-	<div asp-validation-summary="All" class="text-danger"></div>
+				<div class="form-floating">
+					<label asp-for="Stripboek.Aantal_Blz"></label>
+					<input asp-for="Stripboek.Aantal_Blz" placeholder="Aantal Blz" />
+				</div>
 
-	<label asp-for="Stripboek.Titel"></label>
-	<input asp-for="Stripboek.Titel" placeholder="Titel" />
-	<span asp-validation-for="Stripboek.Titel" class="text-danger"></span>
+				<div class="form-floating">
+					<label asp-for="Stripboek.Isbn"></label>
+					<input asp-for="Stripboek.Isbn" placeholder="ISBN" />
+					<span asp-validation-for="Stripboek.Isbn" class="text-danger"></span>
+				</div>
 
-	<label asp-for="Stripboek.Aantal_Blz"></label>
-	<input asp-for="Stripboek.Aantal_Blz" placeholder="Aantal Blz" />
+				<div class="form-floating">
+					<label asp-for="Stripboek.Jaar_Van_Uitgave"></label>
+					<input asp-for="Stripboek.Jaar_Van_Uitgave" placeholder="Jaar van Uitgave" />
+				</div>
 
-	<label asp-for="Stripboek.Isbn"></label>
-	<input asp-for="Stripboek.Isbn" placeholder="ISBN" />
-	<span asp-validation-for="Stripboek.Isbn" class="text-danger"></span>
+				<div class="form-floating">
+					<label>Verander Cover</label>
+					<input asp-for="Cover" />
+				</div>
 
-	<label asp-for="Stripboek.Jaar_Van_Uitgave"></label>
-	<input asp-for="Stripboek.Jaar_Van_Uitgave" placeholder="Jaar van Uitgave" />
-
-	<label>Verander Cover</label>
-	<input asp-for="Cover" />
-
-	<img src="@coverPath" asp-append-version="true" />
-
-	<button type="submit" class="btn">Opslaan</button>
-	<a asp-page="/titels/index" class="btn">Annuleren</a>
-
-	
-</form>
+				<div class="buttons">
+					<button type="submit" class="btn btn-primary">Opslaan</button>
+					<a asp-page="/titels/index" class="btn">Annuleren</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="edit-image">
+			<img src="@coverPath" asp-append-version="true" />
+		</div>
+	</div>
+</div>
