@@ -14,7 +14,9 @@ namespace projectwebdev.Models
         // todo make ISBN int - temp fix for searchquery
         [Required]
         public string Isbn { get; set; }
-        public int? Jaar_Van_Uitgave { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime? Verschijningsdatum { get; set; }
+        public string? Uitgever { get; set; }
         public string? CoverImageUrl { get; set; }
     }
 }

@@ -49,7 +49,7 @@ namespace projectwebdev.Migrations
                         new
                         {
                             Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
-                            ConcurrencyStamp = "ecf2399e-ccc6-471e-8148-06cdc6874ddd",
+                            ConcurrencyStamp = "79c6e9fd-7d22-412b-a30b-91c6fc88d5c7",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -146,31 +146,31 @@ namespace projectwebdev.Migrations
                         {
                             Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1e39ad6b-a5e5-4dd9-9428-124d42cd63cf",
+                            ConcurrencyStamp = "fc9cb3b6-5393-49f1-bc75-698eb09f4e86",
                             Email = "admin@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST",
                             NormalizedUserName = "ADMIN@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDPUUrZKIVDcmp73nfknIv2c2TnpE7NjXRju1GxnwBmuG8gnxLZkkXvW9ZEX9iRj3g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC0PsD3w79/zPnDT909nVHhQ3IR3Z7P9RJCGfavOSSg85dG179BUEhUfySstzm8E3w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "18e986fa-1dba-4fca-9861-ae4e82c59697",
+                            SecurityStamp = "f05abe3b-f55c-4112-96d5-9490c8784579",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost"
                         },
                         new
                         {
-                            Id = "7cd21901-33f9-4308-94a7-fc5e6f1ea7ca",
+                            Id = "9647ce51-f8af-471c-9972-706d09290cd5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "12024a9e-164d-4411-952a-6cb0e30082a7",
+                            ConcurrencyStamp = "0e3e10b9-8e9e-4ed8-b6b1-4754e9e146f0",
                             Email = "user@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST",
                             NormalizedUserName = "USER@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOGqZCH4QbjEj+7mILg6iAmFqdSYdafJ8hjlSQ7hHXrzYwsAHAQhxxg2Ll5Qc33l4w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECxyo1fwu4PgzvBGO5AV4a4H6ERAhKJJ5oSM6YOBp+p3+y3LOM6AlZAiQom7GxVUGw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7d6c83ed-0c94-485e-aafb-e1a18dc31b78",
+                            SecurityStamp = "4622a4bb-9ed7-4247-af72-127534caabac",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost"
                         });
@@ -283,12 +283,21 @@ namespace projectwebdev.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(255)");
 
-                    b.Property<int?>("Jaar_Van_Uitgave")
-                        .HasColumnType("int");
+                    b.Property<string>("Schrijver")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Tekenaar")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Titel")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Uitgever")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<DateTime?>("Verschijningsdatum")
+                        .HasColumnType("date");
 
                     b.HasKey("Id")
                         .HasName("PK_Stripboeken");

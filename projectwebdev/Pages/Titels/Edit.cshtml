@@ -26,14 +26,29 @@
 				</div>
 
 				<div class="form-floating">
+					<label asp-for="Stripboek.Schrijver"></label>
+					<input asp-for="Stripboek.Schrijver" placeholder="Schrijver" />
+				</div>
+
+				<div class="form-floating">
+					<label asp-for="Stripboek.Tekenaar"></label>
+					<input asp-for="Stripboek.Tekenaar" placeholder="Tekenaar" />
+				</div>
+
+				<div class="form-floating">
 					<label asp-for="Stripboek.Isbn"></label>
 					<input asp-for="Stripboek.Isbn" placeholder="ISBN" />
 					<span asp-validation-for="Stripboek.Isbn" class="text-danger"></span>
 				</div>
 
 				<div class="form-floating">
-					<label asp-for="Stripboek.Jaar_Van_Uitgave"></label>
-					<input asp-for="Stripboek.Jaar_Van_Uitgave" placeholder="Jaar van Uitgave" />
+					<label asp-for="Stripboek.Verschijningsdatum"></label>
+					<input asp-for="Stripboek.Verschijningsdatum" type="date" placeholder="Jaar van Uitgave" />
+				</div>
+
+				<div class="form-floating">
+					<label asp-for="Stripboek.Uitgever"></label>
+					<input asp-for="Stripboek.Uitgever" placeholder="Uitgever" />
 				</div>
 
 				<div class="form-floating">

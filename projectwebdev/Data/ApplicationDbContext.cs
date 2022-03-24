@@ -45,7 +45,8 @@ public class ApplicationDbContext : IdentityDbContext
         builder.Entity<Stripboek>().Property(s => s.Schrijver).HasColumnType("varchar(255)");
         builder.Entity<Stripboek>().Property(s => s.Tekenaar).HasColumnType("varchar(255)");
         builder.Entity<Stripboek>().Property(s => s.Isbn).HasColumnType("varchar(255)");
-        builder.Entity<Stripboek>().Property(s => s.Jaar_Van_Uitgave).HasColumnType("int");
+        builder.Entity<Stripboek>().Property(s => s.Verschijningsdatum).HasColumnType("date");
+        builder.Entity<Stripboek>().Property(s => s.Uitgever).HasColumnType("varchar(255)");
         builder.Entity<Stripboek>().Property(s => s.CoverImageUrl).HasColumnType("varchar(255)");
 
         //builder.Entity<Collectie>().Property(c => c.CollectieNaam).HasColumnType("string").IsRequired();

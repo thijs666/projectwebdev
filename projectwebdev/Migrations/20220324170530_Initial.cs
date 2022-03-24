@@ -76,9 +76,15 @@ namespace projectwebdev.Migrations
                     Titel = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Aantal_Blz = table.Column<int>(type: "int", nullable: true),
+                    Schrijver = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Tekenaar = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Isbn = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Jaar_Van_Uitgave = table.Column<int>(type: "int", nullable: true),
+                    Verschijningsdatum = table.Column<DateTime>(type: "date", nullable: true),
+                    Uitgever = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     CoverImageUrl = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -218,17 +224,17 @@ namespace projectwebdev.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "ecf2399e-ccc6-471e-8148-06cdc6874ddd", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "79c6e9fd-7d22-412b-a30b-91c6fc88d5c7", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "7cd21901-33f9-4308-94a7-fc5e6f1ea7ca", 0, "12024a9e-164d-4411-952a-6cb0e30082a7", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAEOGqZCH4QbjEj+7mILg6iAmFqdSYdafJ8hjlSQ7hHXrzYwsAHAQhxxg2Ll5Qc33l4w==", null, false, "7d6c83ed-0c94-485e-aafb-e1a18dc31b78", false, "user@localhost" });
+                values: new object[] { "9647ce51-f8af-471c-9972-706d09290cd5", 0, "0e3e10b9-8e9e-4ed8-b6b1-4754e9e146f0", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAECxyo1fwu4PgzvBGO5AV4a4H6ERAhKJJ5oSM6YOBp+p3+y3LOM6AlZAiQom7GxVUGw==", null, false, "4622a4bb-9ed7-4247-af72-127534caabac", false, "user@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "1e39ad6b-a5e5-4dd9-9428-124d42cd63cf", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEDPUUrZKIVDcmp73nfknIv2c2TnpE7NjXRju1GxnwBmuG8gnxLZkkXvW9ZEX9iRj3g==", null, false, "18e986fa-1dba-4fca-9861-ae4e82c59697", false, "admin@localhost" });
+                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "fc9cb3b6-5393-49f1-bc75-698eb09f4e86", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEC0PsD3w79/zPnDT909nVHhQ3IR3Z7P9RJCGfavOSSg85dG179BUEhUfySstzm8E3w==", null, false, "f05abe3b-f55c-4112-96d5-9490c8784579", false, "admin@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

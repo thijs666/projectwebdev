@@ -12,9 +12,9 @@
 			<div class="stripboek-wrapper">
 				<a asp-page="/titels/detail" asp-route-ID="@stripboek.Id">
 					<img src="@coverPath" asp-append-version="true" />
-					<span class="uitgever">Uitgevernaam</span>
+					<span class="uitgever">@stripboek.Uitgever</span>
 					<h3>@stripboek.Titel</h3>
-					<span class="datum">Datum</span>
+					<span class="datum">@stripboek.Verschijningsdatum</span>
 				</a>
 			</div>
 		</div>

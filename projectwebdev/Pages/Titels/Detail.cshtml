@@ -11,8 +11,11 @@
 
 <span>@Model.Stripboek.Titel</span>
 <span>@Model.Stripboek.Aantal_Blz</span>
+<span>@Model.Stripboek.Schrijver</span>
+<span>@Model.Stripboek.Tekenaar</span>
 <span>@Model.Stripboek.Isbn</span>
-<span>@Model.Stripboek.Jaar_Van_Uitgave</span>
+<span>@Model.Stripboek.Verschijningsdatum</span>
+<span>@Model.Stripboek.Uitgever</span>
 
 <a asp-page="/Titels/Edit" asp-route-ID="@Model.Stripboek.Id" class="btn">Bewerken</a>
 <a asp-page="/Titels/Delete" asp-route-ID="@Model.Stripboek.Id" class="btn">Verwijderen</a>
