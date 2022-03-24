@@ -4,6 +4,7 @@ namespace projectwebdev.Services
 {
     public interface IStripboekRepository
     {
+        IEnumerable<Stripboek> Search(string searchQuery);
         IEnumerable<Stripboek> GetAllStripboeken();
         Stripboek GetStripboek(int id);
         Stripboek Update(Stripboek updatedStripboek);

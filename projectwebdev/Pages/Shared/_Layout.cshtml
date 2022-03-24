@@ -26,10 +26,11 @@
     </div>
 
     <div class="search-block">
-        <div class="form"> 
-            <i class="fa fa-search"></i> 
-            <input type="text" class="form-control form-input" placeholder="Doorzoek de stripboeken database">
-        </div>
+        <form method="get" class="form"> 
+            <i class="fa fa-search"></i>
+            <input type="search" name="SearchQuery" value="@ViewData["SearchQuery"]" asp-route-searchQuery="SearchQuery" class="form-control form-input" placeholder="Doorzoek de stripboeken database">
+            <button hidden asp-page="./Search">Zoeken</button>
+        </form>
     </div>
 
     <div class="user-block">

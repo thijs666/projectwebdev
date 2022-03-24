@@ -75,9 +75,10 @@ namespace projectwebdev.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Titel = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Aantal_Blz = table.Column<int>(type: "int", nullable: false),
-                    Isbn = table.Column<int>(type: "int", nullable: false),
-                    Jaar_Van_Uitgave = table.Column<int>(type: "int", nullable: false),
+                    Aantal_Blz = table.Column<int>(type: "int", nullable: true),
+                    Isbn = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Jaar_Van_Uitgave = table.Column<int>(type: "int", nullable: true),
                     CoverImageUrl = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -217,17 +218,17 @@ namespace projectwebdev.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "44a34335-12aa-463f-8687-48843403137c", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "fa7b4287-62cf-499a-840e-a45383363c21", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ad790533-3fbb-454d-98ea-bfe9f436aac2", 0, "c4c54dc6-cd39-4106-9c5b-b6a365e5ffc5", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAEHCiQEOHDkyt7LIDWWrcCTJDwbzf/nz3BarKWWMyGKoMf61l8cHlg+RIOYuhSE71rA==", null, false, "a139cdc2-0184-4eca-919e-37769366efe4", false, "user@localhost" });
+                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "97ea9538-8b80-48e9-a231-43729e304bfd", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEHTRIx3Ul2EcqgVPjzTzEQNTBGXVOVwkaOexBXTvT4IrEF5rrAB7GZJrYS8H7J11OA==", null, false, "ce61ccb6-a2c7-40d9-abd3-f3e1e7a90221", false, "admin@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "756adfdd-8543-4513-82cb-751ce63e046b", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEH5Mke7gOmaGYsgwIN9Y0xHNPQmIW5GC5TtvmWxTajkZ8Ix2jkz8Xu5QWVqIESY8Rw==", null, false, "95628d53-18f6-43c4-9f9c-3eb1cbc666f9", false, "admin@localhost" });
+                values: new object[] { "f75be1ea-77e7-42bf-8b8e-4958cdf6d6e0", 0, "02ec9692-6401-4013-8cab-f6a6311e01b4", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAEIJXHHCzTurDeeIAmY4RnggWnwPShw4/TzB7ji2OZ14xFoyRPlJlA0TKsDP1/oZ8lg==", null, false, "408ba312-3fb6-4bf2-b927-12bfb6246de9", false, "user@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

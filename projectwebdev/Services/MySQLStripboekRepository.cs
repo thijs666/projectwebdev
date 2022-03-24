@@ -40,6 +40,16 @@ namespace projectwebdev.Services
             return context.Stripboeken.Find(id);
         }
 
+        public IEnumerable<Stripboek> Search(string searchQuery)
+        {
+            if(string.IsNullOrEmpty(searchQuery))
+            {
+                return context.Stripboeken;
+            }
+
+            return context.Stripboeken.Where(e => e.Titel.Contains(searchQuery) || e.Isbn.Contains(searchQuery));
+        }
+
         public Stripboek Update(Stripboek updatedStripboek)
         {
             var stripboek = context.Stripboeken.Attach(updatedStripboek);
