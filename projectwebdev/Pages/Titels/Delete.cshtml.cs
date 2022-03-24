@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using projectwebdev.Models;
@@ -5,6 +6,7 @@ using projectwebdev.Services;
 
 namespace projectwebdev.Pages.Titels
 {
+    [Authorize(Roles = "Administrator")]
     public class DeleteModel : PageModel
     {
         private readonly IStripboekRepository stripboekRepository;
