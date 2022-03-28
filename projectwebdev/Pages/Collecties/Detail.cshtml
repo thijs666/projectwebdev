@@ -1,0 +1,19 @@
+﻿@page "/collecties/view/{collectieid:min(1)}"
+@model projectwebdev.Pages.Collecties.DetailModel
+@{
+    ViewData["Title"] = "Collecties";
+}
+
+<div>
+    <h1 style="font-weight: bold">@Model.Collectie.CollectieNaam</h1>
+    <br/>
+</div>
+
+<div class="container">
+	<h5 style="font-weight: bold">Overzicht</h5>
+	<hr/>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra vulputate placerat. Pellentesque at tincidunt leo. Sed volutpat odio nec pharetra tempor. Integer a tincidunt turpis. Etiam a leo tortor. Morbi feugiat tempus metus eget varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam imperdiet pharetra justo sit amet facilisis. In hac habitasse platea dictumst. Ut quis dapibus tortor.</p>
+</div>
+
+<a asp-page="/Titels/Edit" asp-route-ID="@Model.Collectie.CollectieID" class="btn">Bewerken</a>
+<a asp-page="/Titels/Delete" asp-route-ID="@Model.Collectie.CollectieID" class="btn btn-danger">Verwijderen</a>

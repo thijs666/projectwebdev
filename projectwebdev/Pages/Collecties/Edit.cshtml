@@ -1,0 +1,29 @@
+﻿@page "{collectieid:min(1)?}"
+@model projectwebdev.Pages.Collecties.EditModel
+@{
+    ViewData["Title"] = "Collecties";
+    var pageHeader = Model.Collectie.CollectieID > 0 ? "Bewerken" : "Toevoegen";
+}
+
+<h1>@pageHeader</h1>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="edit-form">
+            <form method="post" enctype="multipart/form-data">
+                <input hidden asp-for="Collectie.CollectieID" />
+
+                <div class="form-floating">
+                    <label asp-for="Collectie.CollectieNaam"></label>
+                    <input asp-for="Collectie.CollectieNaam" placeholder="Collectie Naam" />
+                    <span asp-validation-for="Collectie.CollectieNaam" class="text-danger"></span>
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="btn btn-primary">Opslaan</button>
+                    <a asp-page="/collecties/index" class="btn">Annuleren</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>

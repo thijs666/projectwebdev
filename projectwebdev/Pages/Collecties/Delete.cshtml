@@ -1,0 +1,14 @@
+﻿@page "{collectieid}"
+@model projectwebdev.Pages.Collecties.DeleteModel
+@{
+}
+
+<h1>Bevestig verwijderen</h1>
+
+<div class="alert alert-danger">
+	<h5>Weet je zeker dat je - @Model.Collectie.CollectieNaam - wilt verwijderen?</h5>
+	<form method="post">
+		<button class="btn-primary btn-danger">Ja</button>
+		<a class="btn" asp-page="/Collecties/Index">Annuleren</a>
+	</form>
+</div>
