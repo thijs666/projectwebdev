@@ -49,7 +49,7 @@ namespace projectwebdev.Migrations
                         new
                         {
                             Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
-                            ConcurrencyStamp = "79c6e9fd-7d22-412b-a30b-91c6fc88d5c7",
+                            ConcurrencyStamp = "b06fb1f4-e8de-4f6e-8beb-30beb90f318a",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -146,31 +146,31 @@ namespace projectwebdev.Migrations
                         {
                             Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fc9cb3b6-5393-49f1-bc75-698eb09f4e86",
+                            ConcurrencyStamp = "8d15978e-7e4d-4449-9c91-8c1c22e35aa4",
                             Email = "admin@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST",
                             NormalizedUserName = "ADMIN@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC0PsD3w79/zPnDT909nVHhQ3IR3Z7P9RJCGfavOSSg85dG179BUEhUfySstzm8E3w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENMHh8D9+yVZeuvnpvMqtBvXyE3Vc4ccIXmaBvWDTxSnpHWBrnbfYO/GV6JqcbbHtQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f05abe3b-f55c-4112-96d5-9490c8784579",
+                            SecurityStamp = "bd68cbe8-2143-401b-9e92-8605361de7de",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost"
                         },
                         new
                         {
-                            Id = "9647ce51-f8af-471c-9972-706d09290cd5",
+                            Id = "c5b34586-4855-48c6-8689-35bba6e2717b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e3e10b9-8e9e-4ed8-b6b1-4754e9e146f0",
+                            ConcurrencyStamp = "9857e9aa-8f7b-4184-9450-8a1649239947",
                             Email = "user@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST",
                             NormalizedUserName = "USER@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAECxyo1fwu4PgzvBGO5AV4a4H6ERAhKJJ5oSM6YOBp+p3+y3LOM6AlZAiQom7GxVUGw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEK4wFKDNcvNIdiIi/ghWT4wcPzUFkQRk5HHDrIJpnQtDo4OcePnmRAVT5dGt2IIfJA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4622a4bb-9ed7-4247-af72-127534caabac",
+                            SecurityStamp = "60ce07ec-45a5-477e-8270-299a96c53576",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost"
                         });
@@ -264,6 +264,72 @@ namespace projectwebdev.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("projectwebdev.Models.Collectie", b =>
+                {
+                    b.Property<int>("CollectieID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CollectieNaam")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("CollectieID")
+                        .HasName("PK_Collecties");
+
+                    b.ToTable("Collecties", (string)null);
+                });
+
+            modelBuilder.Entity("projectwebdev.Models.Conditie", b =>
+                {
+                    b.Property<int>("ISBN")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ConditieStripboek")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<sbyte?>("Gesealed")
+                        .HasColumnType("tinyint");
+
+                    b.Property<sbyte?>("Gesigneerd")
+                        .HasColumnType("tinyint");
+
+                    b.Property<sbyte?>("Kaft")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("ISBN")
+                        .HasName("PK_Condities");
+
+                    b.ToTable("Condities", (string)null);
+                });
+
+            modelBuilder.Entity("projectwebdev.Models.Producent", b =>
+                {
+                    b.Property<int>("ProducentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Geboortedatum")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Naam")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Rol")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("ProducentID")
+                        .HasName("PK_Producenten");
+
+                    b.ToTable("Producenten", (string)null);
                 });
 
             modelBuilder.Entity("projectwebdev.Models.Stripboek", b =>

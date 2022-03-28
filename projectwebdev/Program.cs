@@ -43,6 +43,7 @@ builder.Services.Configure<RouteOptions>(options =>
 
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IStripboekRepository, MySQLStripboekRepository>();
+builder.Services.AddScoped<ICollectieRepository, MySQLCollectieRepository>();
 
 var app = builder.Build();
 

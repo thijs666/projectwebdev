@@ -52,11 +52,11 @@ public class ApplicationDbContext : IdentityDbContext
         builder.Entity<Collectie>().Property(c => c.CollectieNaam).HasColumnType("varchar(255)");
         builder.Entity<Collectie>().Property(c => c.CollectieID).HasColumnType("int").UseMySqlIdentityColumn().ValueGeneratedOnAdd();
 
-        builder.Entity<Conditie>().Property(con => con.Gesealed).HasColumnType("bool");
-        builder.Entity<Conditie>().Property(con => con.Gesigneerd).HasColumnType("bool");
-        builder.Entity<Conditie>().Property(con => con.Kaft).HasColumnType("bool");
+        builder.Entity<Conditie>().Property(con => con.Gesealed).HasColumnType("tinyint");
+        builder.Entity<Conditie>().Property(con => con.Gesigneerd).HasColumnType("tinyint");
+        builder.Entity<Conditie>().Property(con => con.Kaft).HasColumnType("tinyint");
         builder.Entity<Conditie>().Property(con => con.ConditieStripboek).HasColumnType("varchar(255)");
-        builder.Entity<Conditie>().Property(con => con.ISBN).HasColumnType("int");
+        builder.Entity<Conditie>().Property(con => con.ISBN).HasColumnType("int").UseMySqlIdentityColumn();
 
         builder.Entity<Producent>().Property(p => p.Geboortedatum).HasColumnType("int");
         builder.Entity<Producent>().Property(p => p.Naam).HasColumnType("varchar(255)");

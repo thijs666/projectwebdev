@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace projectwebdev.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Inital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -64,6 +64,57 @@ namespace projectwebdev.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Collecties",
+                columns: table => new
+                {
+                    CollectieID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CollectieNaam = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Collecties", x => x.CollectieID);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Condities",
+                columns: table => new
+                {
+                    ISBN = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ConditieStripboek = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Gesigneerd = table.Column<sbyte>(type: "tinyint", nullable: true),
+                    Gesealed = table.Column<sbyte>(type: "tinyint", nullable: true),
+                    Kaft = table.Column<sbyte>(type: "tinyint", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Condities", x => x.ISBN);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Producenten",
+                columns: table => new
+                {
+                    ProducentID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Naam = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Geboortedatum = table.Column<int>(type: "int", nullable: false),
+                    Rol = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Producenten", x => x.ProducentID);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -224,17 +275,17 @@ namespace projectwebdev.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "79c6e9fd-7d22-412b-a30b-91c6fc88d5c7", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "b06fb1f4-e8de-4f6e-8beb-30beb90f318a", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "9647ce51-f8af-471c-9972-706d09290cd5", 0, "0e3e10b9-8e9e-4ed8-b6b1-4754e9e146f0", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAECxyo1fwu4PgzvBGO5AV4a4H6ERAhKJJ5oSM6YOBp+p3+y3LOM6AlZAiQom7GxVUGw==", null, false, "4622a4bb-9ed7-4247-af72-127534caabac", false, "user@localhost" });
+                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "8d15978e-7e4d-4449-9c91-8c1c22e35aa4", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAENMHh8D9+yVZeuvnpvMqtBvXyE3Vc4ccIXmaBvWDTxSnpHWBrnbfYO/GV6JqcbbHtQ==", null, false, "bd68cbe8-2143-401b-9e92-8605361de7de", false, "admin@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "fc9cb3b6-5393-49f1-bc75-698eb09f4e86", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEC0PsD3w79/zPnDT909nVHhQ3IR3Z7P9RJCGfavOSSg85dG179BUEhUfySstzm8E3w==", null, false, "f05abe3b-f55c-4112-96d5-9490c8784579", false, "admin@localhost" });
+                values: new object[] { "c5b34586-4855-48c6-8689-35bba6e2717b", 0, "9857e9aa-8f7b-4184-9450-8a1649239947", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAEK4wFKDNcvNIdiIi/ghWT4wcPzUFkQRk5HHDrIJpnQtDo4OcePnmRAVT5dGt2IIfJA==", null, false, "60ce07ec-45a5-477e-8270-299a96c53576", false, "user@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -295,6 +346,15 @@ namespace projectwebdev.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Collecties");
+
+            migrationBuilder.DropTable(
+                name: "Condities");
+
+            migrationBuilder.DropTable(
+                name: "Producenten");
 
             migrationBuilder.DropTable(
                 name: "Stripboeken");
