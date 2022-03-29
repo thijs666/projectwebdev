@@ -26,5 +26,6 @@
 	<img src="@coverPath" asp-append-version="true" />
 </div>
 
+<a asp-page="/Collecties/Toevoegen" asp-route-ID="@Model.Stripboek.Id"class="btn">Toevoegen aan collectie</a>
 <a asp-page="/Titels/Edit" asp-route-ID="@Model.Stripboek.Id" class="btn">Bewerken</a>
 <a asp-page="/Titels/Delete" asp-route-ID="@Model.Stripboek.Id" class="btn btn-danger">Verwijderen</a>

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using projectwebdev.Models;
 using projectwebdev.Services;
 
-namespace projectwebdev.Pages
+namespace projectwebdev.Pages.Collecties
 {
     [Authorize]
     public class CollectiesModel : PageModel
@@ -23,6 +23,18 @@ namespace projectwebdev.Pages
         {
             Collecties = collectieRepository.GetAllCollecties();
         }
-    }
-}
+        
+        public IActionResult OnPost()
+        {
+            Collectie VoegStrip = ();
 
+            if (VoegStrip == null)
+            {
+                return RedirectToPage("/NietGevonden");
+            }
+
+            return RedirectToPage("Index");
+        }
+    }
+
+}

@@ -20,6 +20,28 @@ namespace projectwebdev.Pages.Collecties
         {
             Collectie = collectieRepository.GetCollectie(collectieid);
         }
+        
+    }
+    
+    public class TitelsModel : PageModel
+    {
+        private readonly IStripboekRepository stripboekRepository;
+        public IEnumerable<Stripboek> Stripboeken { get; set; }
+
+        public TitelsModel(IStripboekRepository stripboekRepository)
+        {
+            this.stripboekRepository = stripboekRepository;
+        }
+        
+        public void AddStripboek()
+        {
+            
+        }
+
+        public void OnGet()
+        {
+            Stripboeken = stripboekRepository.GetAllStripboeken();
+        }
     }
 }
 

@@ -1,0 +1,29 @@
+﻿@page "{id:min(1)?}"
+@model projectwebdev.Pages.CollectiesModel
+
+@{
+    ViewData["Title"] = "Collecties";
+}
+
+<h1>Aan welke collectie wilt u het stripboek toevoegen?</h1>
+
+<div class="row">
+    @foreach (var collectie in Model.Collecties)
+    {
+        <form method="post">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="collectie-wrapper">
+                    <a asp-page="/collecties/detail" asp-route-collectieid="@collectie.CollectieID">
+                        <h3>@collectie.CollectieNaam</h3>
+                    </a>
+                </div>
+            </div>
+        </form>
+    }
+</div>
+
+
+ 
+
+
+

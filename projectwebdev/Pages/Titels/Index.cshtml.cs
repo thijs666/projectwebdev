@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
 using projectwebdev.Models;
 using projectwebdev.Services;
@@ -19,6 +20,11 @@ namespace projectwebdev.Pages
         public TitelsModel(IStripboekRepository stripboekRepository)
         {
             this.stripboekRepository = stripboekRepository;
+        }
+        
+        public void AddStripboek()
+        {
+            
         }
 
         public void OnGet()
