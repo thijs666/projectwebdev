@@ -1,0 +1,38 @@
+﻿@page
+@model projectwebdev.Pages.Auteurs
+
+@{
+    ViewData["Title"] = "Auteurs Pagina";
+}
+
+
+<h1>Auteurs Pagina</h1>
+<hr/>
+
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+    <div class="auteur-wrapper">
+        <ul>
+            @foreach (var auteur in @Model.Auteurs2)
+            {
+                <li>@auteur.AuteursNaam -- @auteur.Geboortejaar
+                    <form method="post">
+                        <button type="submit" asp-page-handler="Delete" asp-route-auteurId="@auteur.AuteurID" class="btn btn-danger">Delete</button>
+                    </form>
+                </li>
+            }
+        </ul>
+        </div>
+</div>
+
+<hr/>
+<div>
+    <form method="post" asp-page-handler="Create">
+        Auteursnaam: <input asp-for="NewAuteur.AuteursNaam"/>
+        <span asp-validation-for="NewAuteur.AuteursNaam"></span>
+        <br/>
+        Geboortejaar: <input asp-for="NewAuteur.Geboortejaar"/>
+        <span asp-validation-for="NewAuteur.Geboortejaar"></span>
+        <br/>
+        <button type="submit" class="btn btn-primary">Toevoegen</button>
+    </form>
+</div>
