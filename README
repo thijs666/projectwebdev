@@ -1,0 +1,14 @@
+Tijdelijke inlog, tot mailbevestiging is toegevoegd:
+
+
+Admin inlog:
+Gebruikersnaam: admin@localhost
+Wachtwoord: root
+
+
+Gebruiker inlog:
+Gebruikersnaam: user@localhost
+Wachtwoord: root
+
+
+Het wachtwoord kan verschillen met betrekking tot de MySql database. Als het wachtwoord niet klopt, aanpassen in projectwebdev/appsettings.json
