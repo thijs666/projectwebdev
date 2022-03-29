@@ -1,6 +1,9 @@
-﻿using projectwebdev.Data;
+﻿using System.Data;
+using projectwebdev.Data;
 using projectwebdev.Models;
 using System.Linq;
+using Dapper;
+using Microsoft.Data.SqlClient;
 
 namespace projectwebdev.Services
 {
@@ -56,6 +59,30 @@ namespace projectwebdev.Services
             stripboek.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
             return updatedStripboek;
+        }
+        
+        public List<Stripboek> SorteerAuteur()
+        {
+            using IDbConnection connection =
+                new SqlConnection("Server=localhost;User=root;Password=1234;Database=prototype;");
+
+            var q = "SELECT Id FROM Stripboek ORDER BY Schrijver DESC";
+            var stripboek = connection.Query<Stripboek>(q).ToList();
+            return stripboek;
+        }
+
+        public void InsertInto(Conditie conditie)
+        {
+            using IDbConnection connection = new SqlConnection("Server=localhost;User=root;Password=1234;Database=prototype;");
+            
+            connection.Execute("INSERT INTO Conditie (ISBN, ConditieStripboek, Gesigneerd, Gesealed, Kaft) VALUES (@ISBN, @Conditie, @Gesigneerd, @Gesealed, @Kaft)",
+                new {ISBN = conditie.ISBN, ConditieStripboek = conditie.ConditieStripboek, Gesigneerd = conditie.Gesigneerd, Gesealed = conditie.Gesealed, Kaft = conditie.Kaft });
+        }
+
+        public void GetAllStripboeken2()
+        {
+            using IDbConnection connection = new SqlConnection("Server=localhost;User=root;Password=1234;Database=prototype;");
+            
         }
     }
 }

@@ -1,4 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
+using Dapper;
+using Microsoft.Data.SqlClient;
 
 namespace projectwebdev.Models
 {
@@ -18,5 +21,7 @@ namespace projectwebdev.Models
         public DateTime? Verschijningsdatum { get; set; }
         public string? Uitgever { get; set; }
         public string? CoverImageUrl { get; set; }
+        
     }
+    
 }

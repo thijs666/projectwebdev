@@ -1,9 +1,10 @@
 ﻿@page "/Collecties"
+@using projectwebdev.Models
 @model projectwebdev.Pages.CollectiesModel
 @{
     ViewData["Title"] = "Collecties";
 }
-
+<a asp-page="/Collecties/Edit" class="btn">Collectie aanmaken</a>
 <div class="row">
     @foreach (var collectie in Model.Collecties)
     {
