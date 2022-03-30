@@ -275,17 +275,17 @@ namespace projectwebdev.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "b8df9e51-840b-461b-a5b2-2f9fa10c5542", "Administrator", "ADMINISTRATOR" });
+                values: new object[] { "2301D884-221A-4E7D-B509-0113DCC043E1", "adec8c6a-77e6-43c3-af19-76c179fd3b7b", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "6a44ad2a-8350-4498-92f7-5368e4a2ec17", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEDzgiINdx25Z50pzg9XY+GN4AOcyZS5+xBhbOKkv1E187S2OKbHQMrpdE6tB1GDZPg==", null, false, "c3a16404-82d5-404c-bef3-3822c7bfc425", false, "admin@localhost" });
+                values: new object[] { "B22698B8-42A2-4115-9631-1C2D1E2AC5F7", 0, "534f1443-27fc-4e8f-8aee-b9e1e2c464fb", "admin@localhost", true, false, null, "ADMIN@LOCALHOST", "ADMIN@LOCALHOST", "AQAAAAEAACcQAAAAEMik/17bUvzWP3LhcLlzbxwhNMJEi/5vJxCY+cNFhZWB2XRVShGaNaQBO8q1e7hNlw==", null, false, "09546ef4-cc9a-4edd-84a9-65f2da20727e", false, "admin@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f0b438af-029d-4eb7-ba0d-74d9e91eec51", 0, "0eeb566b-6f40-4eae-8030-21e69606bf32", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAEJw6NKcRVnKwnEWFSnuBpoG9thk13HnpG433IG17sLX6ANu/F8dNQAXGx+3EeSf9iQ==", null, false, "090bdbe8-d36c-4fd4-933f-5189c26de3ea", false, "user@localhost" });
+                values: new object[] { "f5d4090b-d160-4bb6-bae2-d41ca5191d13", 0, "86a8fa8e-177c-4409-9e90-584e2bcc5c3c", "user@localhost", true, false, null, "USER@LOCALHOST", "USER@LOCALHOST", "AQAAAAEAACcQAAAAEJ+sEI7qidSvjgk6D3xRFZaVB2C/0soJoyloKBPe+ZEsEPaEtXzK9Wa0usIReb3oKA==", null, false, "415b138e-0164-44d4-b1ec-2b830b9b7bba", false, "user@localhost" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

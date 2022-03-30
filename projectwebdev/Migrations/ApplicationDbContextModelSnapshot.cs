@@ -49,7 +49,7 @@ namespace projectwebdev.Migrations
                         new
                         {
                             Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
-                            ConcurrencyStamp = "b8df9e51-840b-461b-a5b2-2f9fa10c5542",
+                            ConcurrencyStamp = "adec8c6a-77e6-43c3-af19-76c179fd3b7b",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -236,31 +236,31 @@ namespace projectwebdev.Migrations
                         {
                             Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6a44ad2a-8350-4498-92f7-5368e4a2ec17",
+                            ConcurrencyStamp = "534f1443-27fc-4e8f-8aee-b9e1e2c464fb",
                             Email = "admin@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST",
                             NormalizedUserName = "ADMIN@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDzgiINdx25Z50pzg9XY+GN4AOcyZS5+xBhbOKkv1E187S2OKbHQMrpdE6tB1GDZPg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMik/17bUvzWP3LhcLlzbxwhNMJEi/5vJxCY+cNFhZWB2XRVShGaNaQBO8q1e7hNlw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c3a16404-82d5-404c-bef3-3822c7bfc425",
+                            SecurityStamp = "09546ef4-cc9a-4edd-84a9-65f2da20727e",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost"
                         },
                         new
                         {
-                            Id = "f0b438af-029d-4eb7-ba0d-74d9e91eec51",
+                            Id = "f5d4090b-d160-4bb6-bae2-d41ca5191d13",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0eeb566b-6f40-4eae-8030-21e69606bf32",
+                            ConcurrencyStamp = "86a8fa8e-177c-4409-9e90-584e2bcc5c3c",
                             Email = "user@localhost",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST",
                             NormalizedUserName = "USER@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJw6NKcRVnKwnEWFSnuBpoG9thk13HnpG433IG17sLX6ANu/F8dNQAXGx+3EeSf9iQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJ+sEI7qidSvjgk6D3xRFZaVB2C/0soJoyloKBPe+ZEsEPaEtXzK9Wa0usIReb3oKA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "090bdbe8-d36c-4fd4-933f-5189c26de3ea",
+                            SecurityStamp = "415b138e-0164-44d4-b1ec-2b830b9b7bba",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost"
                         });
