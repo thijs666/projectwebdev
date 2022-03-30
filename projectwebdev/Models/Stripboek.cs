@@ -22,6 +22,10 @@ namespace projectwebdev.Models
         public string? Uitgever { get; set; }
         public string? CoverImageUrl { get; set; }
         
+        public int CollectieID { get; set; }
+        
+        public Collectie Collectie { get; set; }
+        
     }
     
 }

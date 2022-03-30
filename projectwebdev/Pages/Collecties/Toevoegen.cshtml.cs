@@ -23,17 +23,10 @@ namespace projectwebdev.Pages.Collecties
         {
             Collecties = collectieRepository.GetAllCollecties();
         }
-        
-        public IActionResult OnPost()
+
+        public IActionResult OnPost(int CollectieID)
         {
-            Collectie VoegStrip = ();
-
-            if (VoegStrip == null)
-            {
-                return RedirectToPage("/NietGevonden");
-            }
-
-            return RedirectToPage("Index");
+            
         }
     }
 

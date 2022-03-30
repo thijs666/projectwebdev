@@ -8,6 +8,8 @@ namespace projectwebdev.Models
         public string CollectieNaam { get; set; }
         public int CollectieID { get; set; }
         
+        public List<Stripboek> Stripboeken { get; set; }
+        
     }
 
 }
