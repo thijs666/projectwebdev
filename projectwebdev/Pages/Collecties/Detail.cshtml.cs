@@ -13,13 +13,20 @@ namespace projectwebdev.Pages.Collecties
         {
             this.collectieRepository = collectieRepository;
         }
-        
+
         public Collectie Collectie { get; private set; }
 
         public void OnGet(int collectieid)
         {
             Collectie = collectieRepository.GetCollectie(collectieid);
         }
+
+        
     }
 }
+    
+    
+    
+        
+        
 

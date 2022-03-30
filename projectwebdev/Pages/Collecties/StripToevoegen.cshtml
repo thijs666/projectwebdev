@@ -1,0 +1,51 @@
+﻿@page
+@using NuGet.Protocol
+@model projectwebdev.Pages.Collecties.StripToevoegen
+
+@{
+    ViewData["Title"] = "StripCollectie Pagina";
+}
+
+
+<h1>Collectie Pagina</h1>
+<hr/>
+
+<div class="container">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="collectie-wrapper">
+            <ul>
+                @foreach (var stripboekcollectie in @Model.StripboekCollecties)
+                {
+                    <li>@stripboekcollectie.Titel == @stripboekcollectie.Schrijver
+                        <form method="post">
+                            <button type="submit" asp-page-handler="Delete" asp-route-stripboekId="@stripboekcollectie.StripboekID" class="btn btn-danger">Verwijderen</button>
+                        </form>
+                    </li>
+                }
+            </ul>
+            </div>
+    </div> 
+     <hr/>
+        <div>
+            <form method="post" asp-page-handler="Create">
+                Titel: <input asp-for="NewStripboekCollectie.Titel"/>
+                <span asp-validation-for="NewStripboekCollectie.Titel"></span>
+                <br/>
+                Schrijver: <input asp-for="NewStripboekCollectie.Schrijver"/>
+                <span asp-validation-for="NewStripboekCollectie.Schrijver"></span>
+                <br/>
+                Tekenaar: <input asp-for="NewStripboekCollectie.Schrijver"/>
+                <span asp-validation-for="NewStripboekCollectie.Schrijver"></span>
+                <br/>
+                Aantal bladzijden: <input asp-for="NewStripboekCollectie.Aantal_Blz"/>
+                <span asp-validation-for="NewStripboekCollectie.Aantal_Blz"></span>
+                <br/>
+                ISBN: <input asp-for="NewStripboekCollectie.ISBN"/>
+                <span asp-validation-for="NewStripboekCollectie.ISBN"></span>
+                <br/>
+                <button type="submit" class="btn btn-primary">Toevoegen</button>
+            </form>
+        </div>
+</div>        
+            
+  
