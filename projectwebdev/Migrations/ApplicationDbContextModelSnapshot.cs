@@ -49,7 +49,7 @@ namespace projectwebdev.Migrations
                         new
                         {
                             Id = "2301D884-221A-4E7D-B509-0113DCC043E1",
-                            ConcurrencyStamp = "b06fb1f4-e8de-4f6e-8beb-30beb90f318a",
+                            ConcurrencyStamp = "b8df9e51-840b-461b-a5b2-2f9fa10c5542",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -76,104 +76,6 @@ namespace projectwebdev.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("longtext");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("longtext");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex");
-
-                    b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "8d15978e-7e4d-4449-9c91-8c1c22e35aa4",
-                            Email = "admin@localhost",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@LOCALHOST",
-                            NormalizedUserName = "ADMIN@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAENMHh8D9+yVZeuvnpvMqtBvXyE3Vc4ccIXmaBvWDTxSnpHWBrnbfYO/GV6JqcbbHtQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "bd68cbe8-2143-401b-9e92-8605361de7de",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@localhost"
-                        },
-                        new
-                        {
-                            Id = "c5b34586-4855-48c6-8689-35bba6e2717b",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "9857e9aa-8f7b-4184-9450-8a1649239947",
-                            Email = "user@localhost",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "USER@LOCALHOST",
-                            NormalizedUserName = "USER@LOCALHOST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEK4wFKDNcvNIdiIi/ghWT4wcPzUFkQRk5HHDrIJpnQtDo4OcePnmRAVT5dGt2IIfJA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "60ce07ec-45a5-477e-8270-299a96c53576",
-                            TwoFactorEnabled = false,
-                            UserName = "user@localhost"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -264,6 +166,104 @@ namespace projectwebdev.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("projectwebdev.Models.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "B22698B8-42A2-4115-9631-1C2D1E2AC5F7",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "6a44ad2a-8350-4498-92f7-5368e4a2ec17",
+                            Email = "admin@localhost",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@LOCALHOST",
+                            NormalizedUserName = "ADMIN@LOCALHOST",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDzgiINdx25Z50pzg9XY+GN4AOcyZS5+xBhbOKkv1E187S2OKbHQMrpdE6tB1GDZPg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "c3a16404-82d5-404c-bef3-3822c7bfc425",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@localhost"
+                        },
+                        new
+                        {
+                            Id = "f0b438af-029d-4eb7-ba0d-74d9e91eec51",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0eeb566b-6f40-4eae-8030-21e69606bf32",
+                            Email = "user@localhost",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "USER@LOCALHOST",
+                            NormalizedUserName = "USER@LOCALHOST",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJw6NKcRVnKwnEWFSnuBpoG9thk13HnpG433IG17sLX6ANu/F8dNQAXGx+3EeSf9iQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "090bdbe8-d36c-4fd4-933f-5189c26de3ea",
+                            TwoFactorEnabled = false,
+                            UserName = "user@localhost"
+                        });
                 });
 
             modelBuilder.Entity("projectwebdev.Models.Collectie", b =>
@@ -382,7 +382,7 @@ namespace projectwebdev.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("projectwebdev.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -391,7 +391,7 @@ namespace projectwebdev.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("projectwebdev.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -406,7 +406,7 @@ namespace projectwebdev.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("projectwebdev.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -415,7 +415,7 @@ namespace projectwebdev.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("projectwebdev.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

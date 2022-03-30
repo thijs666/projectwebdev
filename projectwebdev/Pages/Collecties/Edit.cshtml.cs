@@ -26,7 +26,8 @@ namespace projectwebdev.Pages.Collecties
             this.webHostEnvironment = webHostEnvironment;
         }
 
-        [BindProperty] public Collectie Collectie { get; set; }
+        [BindProperty]
+        public Collectie Collectie { get; set; }
 
         public IActionResult OnGet(int? collectieid)
         {

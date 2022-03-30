@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace projectwebdev.Models
 {
@@ -6,6 +7,7 @@ namespace projectwebdev.Models
     {
         public string CollectieNaam { get; set; }
         public int CollectieID { get; set; }
+        
     }
 
 }

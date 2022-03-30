@@ -4,7 +4,7 @@ using projectwebdev.Models;
 
 namespace projectwebdev.Data;
 
-public class ApplicationDbContext : IdentityDbContext
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
     public DbSet<Stripboek> Stripboeken { get; set; }
     public DbSet<Collectie> Collecties { get; set; }
