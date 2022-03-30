@@ -28,14 +28,6 @@ namespace projectwebdev.Services
             return auteurs.ToList();
         }
 
-        public List<Auteur> SorteerAuteur()
-        {
-            using var connection = Connect();
-            var q = "SELECT AuteurID FROM auteur ORDER BY AuteursNaam DESC";
-            var auteursorteer = connection.Query<Auteur>(q).ToList();
-            return auteursorteer;
-        }
-
         public void InsertInto(Auteur auteur)
         {
             using var connection = Connect();
@@ -74,28 +66,7 @@ namespace projectwebdev.Services
             return null;
         }
 
-        public Auteur Update(Auteur auteur)
-        {
-            using var connection = Connect();
-            int numRowsEffected = connection.Execute(
-                @"UPDATE auteur SET AuteursNaam = @AuteursNaam, Geboortejaar = @Geboortejaar WHERE AuteurID = @AuteurID",
-                new
-                {
-                    AuteurID = auteur.AuteurID,
-                    AuteursNaam = auteur.AuteursNaam,
-                    Geboortejaar = auteur.Geboortejaar
-                }
-            );
-
-            if (numRowsEffected == 1)
-            {
-                var newAuteur = connection.QuerySingle<Auteur>(
-                    "SELECT * FROM auteur WHERE AuteurID = LAST_INSERT_ID()");
-                return newAuteur;
-            }
-
-            throw new Exception("Update Error!");
-        }
+        
     }
 }
 
